@@ -5,9 +5,6 @@ services:
     ports:
       - "8080:8080"
 
-  attacker-client:
-    build: ./attacker-client
-
   attacker-ldap:
     build: ./attacker-ldap
     ports:

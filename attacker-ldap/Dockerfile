@@ -1,7 +1,7 @@
 FROM alpine:3
 WORKDIR /opt/app
 RUN apk add openjdk8 maven
-RUN wget https://github.com/zzwlpx/JNDIExploit/archive/refs/heads/master.zip
+RUN wget https://github.com/avergnaud/JNDIExploit/archive/refs/heads/master.zip
 RUN unzip master
 WORKDIR /opt/app/JNDIExploit-master
 RUN mvn package

